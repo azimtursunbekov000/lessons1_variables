@@ -13,9 +13,17 @@ void main(List<String> args) {
   } else {
     print('false');
   }
-  String str1 = '45645';
+  String str1 = '12345';
 
   if (str1[0] == '1' || str1[0] == '2' || str1[0] == '3') {
+    print('да');
+  } else {
+    print('нет');
+  }
+
+  String str2 = 'abcde';
+
+  if (str2[0] == 'a' || str1[0] == 'b' || str1[0] == 'c') {
     print('да');
   } else {
     print('нет');
