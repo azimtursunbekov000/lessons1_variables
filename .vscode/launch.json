@@ -8,7 +8,7 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "HomeWork/lessons5Part2.dart",
+            "program": "Practice/Lessons7Practice/binarySearch.dart",
             "console": "terminal"
         }
     ]
