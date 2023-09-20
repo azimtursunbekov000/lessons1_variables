@@ -1,4 +1,3 @@
-import 'dart:io';
 
 void main(List<String> args) {
   Map user = {"name": "Azim", "lastname": "Tursunbekov", "age": 20};
