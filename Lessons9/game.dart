@@ -3,27 +3,38 @@ import 'dart:math';
 
 void main(List<String> args) {
   print(
-      "Здраствуйте!) У нас есть 2 режима игры, это : \n 1)Вы отгадываете  число \n 2)Компьютер отгадывает \n Для выбора нажмите 1 или 2");
-  while (true) {
-    int number_to_choose_from = int.parse(stdin.readLineSync() ?? "");
-    if (number_to_choose_from == 1) {
-      Quess(100, 0, 0);
-      break;
-    } else if (number_to_choose_from == 2) {
-      binary(0, 100, 0);
-      break;
-    } else {
-      print("к сожалению у нас только 2 режима");
-    }
+      "Здраствуйте! У нас есть 2 режима игры а так же раунды, максимум 5 раундов можно сыграть");
+
+  int roundGame = 0;
+  while (roundGame < 1 || roundGame > 5) {
+    print("cколько раундов хотите играть? (1-5)");
+    roundGame = int.parse(stdin.readLineSync() ?? "3");
+  }
+  int number_to_choose_from = 0;
+  while (number_to_choose_from < 1 || number_to_choose_from > 2) {
+    print(
+        'это : \n 1)Вы отгадываете  число \n 2)Компьютер отгадывает \n Для выбора нажмите 1 или 2');
+    var a = stdin.readLineSync();
+    number_to_choose_from = int.parse(a ?? "3");
+  }
+
+  int winner = round(number_to_choose_from, roundGame);
+  if (winner == 1) {
+    print("комп выиграл");
+  } else {
+    print("выиграл человек");
   }
 }
 
-Quess(var high, var low, int counter) {
+int computer() {
+  var high = 100;
+  var low = 0;
+  var counter = 0;
   print("ну че, поиграем?\nя уже загадал число, отгaдаешь?");
   var random = Random().nextInt(high);
 
   while (true) {
-    var mid = (high + low) / 2.round();
+    var mid = (high + low) ~/ 2.round();
 
     print("введите ваше число");
     int number = int.parse(stdin.readLineSync() ?? "0");
@@ -44,9 +55,13 @@ Quess(var high, var low, int counter) {
       print("не туда свернулi");
     }
   }
+  return counter;
 }
 
-binary(int low, int high, int attempts) {
+int human() {
+  var low = 0;
+  var high = 100;
+  var attempts = 0;
   while (true) {
     int mid = ((low + high) / 2).round();
     print("Предполагаю, что число равно ${mid}");
@@ -62,9 +77,29 @@ binary(int low, int high, int attempts) {
       print("Угадал! Это заняло ${attempts} попыток.");
       break;
     } else {
-      print("играйте честно, чырдын котону кара");
+      print("играйте честно");
     }
   }
+  return attempts;
 }
 
-// round() {}
+int round(int number_to_choose_from, int roundGame) {
+  int humanRate = 0;
+  int compRate = 0;
+  for (int i = 1; i <= roundGame; i++) {
+    if (number_to_choose_from == 1) {
+      compRate += computer();
+      humanRate += human();
+    } else {
+      humanRate += human();
+      compRate += computer();
+    }
+    print("\n новый раунд \n");
+  }
+
+  if (compRate < humanRate) {
+    return 1; //комп победил
+  } else {
+    return 2; //человек победил
+  }
+}
