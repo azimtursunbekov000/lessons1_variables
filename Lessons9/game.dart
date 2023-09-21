@@ -21,8 +21,10 @@ void main(List<String> args) {
   int winner = round(number_to_choose_from, roundGame);
   if (winner == 1) {
     print("комп выиграл");
-  } else {
+  } else if (winner == 2) {
     print("выиграл человек");
+  } else {
+    print("Ничья!");
   }
 }
 
@@ -99,7 +101,9 @@ int round(int number_to_choose_from, int roundGame) {
 
   if (compRate < humanRate) {
     return 1; //комп победил
-  } else {
+  } else if (humanRate < compRate) {
     return 2; //человек победил
+  } else {
+    return 0; // ничья
   }
 }
