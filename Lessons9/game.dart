@@ -8,7 +8,7 @@ void main(List<String> args) {
   int roundGame = 0;
   while (roundGame < 1 || roundGame > 5) {
     print("cколько раундов хотите играть? (1-5)");
-    roundGame = int.parse(stdin.readLineSync() ?? "3");
+    roundGame = int.parse((stdin.readLineSync() ?? "3"));
   }
   int number_to_choose_from = 0;
   while (number_to_choose_from < 1 || number_to_choose_from > 2) {

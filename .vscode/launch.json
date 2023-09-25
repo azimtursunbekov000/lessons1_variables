@@ -8,7 +8,7 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "Lessons9/game.dart",
+            "program": "Lessons10Recursion/practice2.dart",
             "console": "terminal"
         }
     ]
