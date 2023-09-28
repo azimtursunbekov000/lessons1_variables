@@ -4,13 +4,13 @@ import 'dart:math';
 typedef MyPow(int value);
 
 void main(List<String> args) {
-  var calculator = Degree(3);
-  print(calculator(3));
+  // var calculator = Degree(3);
+  // print(calculator(3));
 
   // request_response(2, 3);
   // nard(1, 2);
-  // sumN(5);
-  // fib(6);
+  // sum(5);
+  fib(2);
 }
 
 // request_response(int a, int b) {
@@ -33,24 +33,23 @@ void main(List<String> args) {
 //   }
 // }
 
-MyPow Degree(int degree) {
-  return (int value) => pow(value, degree).toInt();
+// MyPow Degree(int degree) {
+//   return (int value) => pow(value, degree).toInt();
+// }
+
+//
+// sum(int a) {
+//   if (a <= 1) {
+//     return 1;
+//   } else {
+//     return a + sum(a - 1);
+//   }
+// }
+
+fib(int n) {
+  if (n <= 1) {
+    return 1;
+  } else {
+    return fib(n - 1) + fib(n - 2);
+  }
 }
-
-// sumN(var n) {
-//   if (n < 1) {
-//     return n;
-//   } else {
-//     print(n);
-//     return sumN(n - 1);
-//   }
-// }
-
-// fib(int n) {
-//   if (n <= 1) {
-//     return n;
-//   } else {
-//     print(n);
-//     return fib(n - 1) + fib(n - 1);
-//   }
-// }
