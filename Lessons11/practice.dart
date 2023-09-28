@@ -1,10 +1,8 @@
-import 'dart:html';
-
 void main(List<String> args) {
   cub();
   sum();
   number();
-  numbers(0);
+  numbers();
   List<String> fruits = ['azim', 'erbol', 'erjjan', 'aman'];
 
   // Сортировка по "a-z"
@@ -25,7 +23,7 @@ void main(List<String> args) {
   myArray.forEach((element) {
     print(element);
   });
-  print("=============================================================");
+  print("============================================================= ");
 }
 
 cub() {
@@ -34,7 +32,7 @@ cub() {
     int cub = element * element * element;
     print(cub);
   });
-  print("=============================================================");
+  print("============================================================= cub");
 }
 
 sum() {
@@ -44,7 +42,7 @@ sum() {
     sum = element + element;
     print(sum);
   });
-  print("=====================================================1111111=======");
+  print("============================================================ sum");
 }
 
 number() {
@@ -53,6 +51,16 @@ number() {
   print(isEven);
 }
 
-numbers(int sum) {
-  List myList = [1, 2, 3, 4, 0, 5, 6, 7, 9, 10];
+numbers() {
+  List<int> myList = [1, 2, 3, 4, 0, 5, 6, 7, 9, 10];
+  bool isBreake = false;
+  int sum = myList.reduce((value, element) {
+    if (isBreake || value == 0 || element == 0) {
+      isBreake == true;
+      return value;
+    } else {
+      return value + element;
+    }
+  });
+  print(sum);
 }
