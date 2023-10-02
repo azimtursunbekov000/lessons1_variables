@@ -8,8 +8,13 @@ void main() {
   description.printDestriction();
   description.toReturn();
 // конструктор Phone
-  Phone information = Phone(number: 996550567779, model: "Iphone", weight: 2.5);
-  information.printPhoneInformation();
+  Phone informationIphone =
+      Phone(number: 996550567779, model: "Iphone", weight: 0.5);
+  informationIphone.printPhoneInformation();
+
+  Phone informationAndroid =
+      Phone(number: 996550500500, model: "Android", weight: 0.9);
+  informationAndroid.printPhoneInformation();
 }
 
 class Car {
@@ -52,7 +57,7 @@ class Phone {
   Phone({required this.number, required this.model, required this.weight});
 
   printPhoneInformation() {
-    print("number = $number \nmodel = $model \nweight = $weight");
+    print("number = $number \nmodel = $model \nweight = $weight кг");
   }
 }
 
