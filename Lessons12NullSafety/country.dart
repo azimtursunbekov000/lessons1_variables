@@ -29,8 +29,8 @@ class Car {
       required this.title,
       required this.price});
 
-  returnCharacteristic() {
-    return Car(power: power, color: color, title: title, price: price);
+  String returnCharacteristic() {
+    return "$power \n$color \n$price \n$title";
   }
 }
 
@@ -44,8 +44,8 @@ class Country {
     print("$city \n$climate");
   }
 
-  toReturn() {
-    return printDestriction();
+  String toReturn() {
+    return "$city \n$climate";
   }
 }
 
