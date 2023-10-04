@@ -53,3 +53,39 @@ class Aspirant extends Student {
     }
   }
 }
+
+class Animal {
+  String food;
+  String location;
+  Animal({required this.food, required this.location});
+
+  String makeNoise() {
+    return "";
+  }
+
+  String eat() {
+    return "ням-ням";
+  }
+
+  String sleep() {
+    return "";
+  }
+}
+
+class Dog extends Animal {
+  Dog({required super.food, required super.location});
+  @override
+  String makeNoise() {
+    return "гав-гав";
+  }
+
+  @override
+  String eat() {
+    return "чавкает ))";
+  }
+
+  @override
+  String sleep() {
+    return "собака спит";
+  }
+}
