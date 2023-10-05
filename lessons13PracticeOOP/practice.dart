@@ -13,6 +13,17 @@ void main(List<String> args) {
   //
   TriangleChecker triangleChecker = TriangleChecker(a: 1, b: 1, c: 4.2);
   print(triangleChecker.is_triangle());
+
+  //
+
+  MyString myString = MyString();
+
+  String originalString = "hello";
+  String reversedString = myString.reverse(originalString);
+  String ucFirstString = myString.ucFirst(originalString);
+
+  print("Перевернутая: $reversedString");
+  print("Первая буква с заглавной: $ucFirstString");
 }
 
 class Nikola {
@@ -100,5 +111,18 @@ class TriangleChecker {
     } else {
       return "Жаль, но из этого треугольник не сделать.";
     }
+  }
+}
+
+class MyString {
+  String reverse(String input) {
+    return String.fromCharCodes(input.runes.toList().reversed);
+  }
+
+  String ucFirst(String input) {
+    if (input.isEmpty) {
+      return input;
+    }
+    return '${input[0].toUpperCase()}${input.substring(1)}';
   }
 }
