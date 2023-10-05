@@ -47,9 +47,9 @@ class Aspirant extends Student {
   String getScholarship() {
     int summ = 40000;
     if (averageMark == 5.0) {
-      return "вы получаете стипендию в размере $summ";
+      return "вы получаете стипендию в размере $summ сом";
     } else {
-      return "0";
+      return "вы получаете стипендию в размере 18000 сом";
     }
   }
 }
